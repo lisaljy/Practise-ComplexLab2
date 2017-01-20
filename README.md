@@ -25,6 +25,7 @@ spectral_layout：根据图的拉普拉斯特征向量排列节点
 
 ### 复杂网络模型：  
 * 规则图  
+星形耦合网络：有一个中心点，其余的N-1个点只与中心点相连，彼此不相连   
 全局耦合网络：任意两个节点之间有边直接相连  
 最近邻耦合网络：每一个节点只和它周围的邻居节点相连  
 ```
@@ -32,7 +33,7 @@ random_graphs.random_regular_graph(d, n)
 生成一个含有n个节点，每个节点有d个邻居节点的规则图  
 ```  
 *可实现全局耦合&邻近耦合*  
-星形耦合网络：有一个中心点，其余的N-1个点只与中心点相连，彼此不相连   
+![alt text](https://raw.githubusercontent.com/lisaljy/Practise-ComplexLab2/master/pic/normal.png)  
 * ER随机图  
 具有固定边数的ER随机图G(N,M)  
 具有固定连边概率的ER随机图G(N,p)  
@@ -41,24 +42,28 @@ random_graphs.erdos_renyi_graph(n,p)
 生成一个含有n个节点、以概率p连接的ER随机图  
 ```  
 *当N充分大时，所得边数会比较接近*  
+![alt text](https://raw.githubusercontent.com/lisaljy/Practise-ComplexLab2/master/pic/ER.png)  
 * 小世界网络  
+NW小世界模型：随机化加边  
 WS小世界模型：随机化重连  
 *WS小世界模型是从完全规则网络向完全随机网络的过渡，在规则网络中引入少许随机性即可*  
 ```
 random_graphs.watts_strogatz_graph(n, k, p)  
 生成一个含有n个节点、每个节点有k个邻居、以概率p随机化重连边的WS小世界网络  
 ```  
-NW小世界模型：随机化加边  
+![alt text](https://raw.githubusercontent.com/lisaljy/Practise-ComplexLab2/master/pic/WS.png)  
 * 无标度网络模型   
+Price 模型：针对论文引用网络的增长和累积优势机制  
+节点复制模型：新加入的节点倾向于复制网络中已有节点的行为  
+适应度模型：在BA模型的基础上提出，优先链接中，链接概率和每个节点的度和适应度之积成正比  
+局域世界演化模型：在BA模型的基础上，优先链接机制针对每个节点各自的局域世界  
 BA无标度网络：节点增长，优先链接（针对www研究的有向化：新节点指向已有节点）  
 ```
 random_graphs.barabasi_albert_graph(n, m)  
 生成一个含有n个节点、每次加入m条边的BA无标度网络  
 ```  
-Price 模型：针对论文引用网络的增长和累积优势机制  
-节点复制模型：新加入的节点倾向于复制网络中已有节点的行为  
-适应度模型：在BA模型的基础上提出，优先链接中，链接概率和每个节点的度和适应度之积成正比  
-局域世界演化模型：在BA模型的基础上，优先链接机制针对每个节点各自的局域世界  
+![alt text](https://raw.githubusercontent.com/lisaljy/Practise-ComplexLab2/master/pic/BA.png)
 
 ### Practice:  
 将给定的城市编号进行有向图连边表示
+![alt text](https://raw.githubusercontent.com/lisaljy/Practise-ComplexLab2/master/pic/data.png)

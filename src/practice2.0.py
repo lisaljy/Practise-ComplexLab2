@@ -6,7 +6,7 @@ city=[]
 for line in content:
    group=line.strip()
    list = group.split('|')
-   couple = [list[0],list[1]]
+   couple = [list[0],list[1]]  //建立一个装边的容器
    city.append(couple)
 G = nx.DiGraph()
 G.add_edges_from(city)
